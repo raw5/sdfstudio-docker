@@ -11,5 +11,5 @@ python -m pip install --upgrade pip
 
 
 # # Install Dependencies
-# pip install torch==1.12.1+cu113 torchvision==0.13.1+cu113 -f https://download.pytorch.org/whl/torch_stable.html
-# pip install git+https://github.com/NVlabs/tiny-cuda-nn/#subdirectory=bindings/torch
+pip install torch==1.12.1+cu113 torchvision==0.13.1+cu113 -f https://download.pytorch.org/whl/torch_stable.html
+pip install git+https://github.com/NVlabs/tiny-cuda-nn/#subdirectory=bindings/torch
