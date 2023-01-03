@@ -66,10 +66,12 @@ RUN sudo apt-get update && \
     libgl1-mesa-glx libegl1-mesa libxrandr2 libxss1 libxcursor1 libxcomposite1 libasound2 libxi6 libxtst6
 
 
+USER root
 # Install Anaconda3
 COPY resources/install_anaconda.sh /tmp/
 RUN bash /tmp/install_anaconda.sh
 
+USER 1000
 # Create Sdfstudio Env and Install Torch+Tinucuda
 # COPY resources/create_sdfstudio_and_tinycuda.sh /tmp/
 # RUN bash /tmp/create_sdfstudio_and_tinycuda.sh
