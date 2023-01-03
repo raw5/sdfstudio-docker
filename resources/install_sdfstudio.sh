@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "------------- Activating Conda ----------------"
-source ~/anaconda3/bin/activate
+source /opt/anaconda3/bin/activate
 conda activate
 conda activate sdfstudio
 
