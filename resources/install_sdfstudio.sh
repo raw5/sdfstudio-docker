@@ -13,6 +13,5 @@ cd $HOME/sdfstudio
 pip install --upgrade pip setuptools
 pip install -e .
 
-sudo echo 'export PATH="$PATH:/home/kasm-user/.local/bin"' >> /etc/bash.bashrc
 conda deactivate
 cd $HOME
