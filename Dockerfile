@@ -77,11 +77,11 @@ USER 1000
 # RUN bash /tmp/create_sdfstudio_and_tinycuda.sh
 
 # Install SDFstudio and Nerfstudio
-# COPY resources/install_sdfstudio.sh /tmp/
-# RUN bash /tmp/install_sdfstudio.sh
+COPY resources/install_sdfstudio.sh /tmp/
+RUN bash /tmp/install_sdfstudio.sh
 
 # Install Colmap
-# RUN sudo apt-get install -y --no-install-recommends colmap
+RUN sudo apt-get install -y --no-install-recommends colmap
 
 # USER 1000
 
