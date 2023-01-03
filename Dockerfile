@@ -24,20 +24,10 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/list/*
 
 
-######### End Customizations ###########
-USER root
-RUN chown 1000:0 $HOME
-RUN $STARTUPDIR/set_user_permission.sh $HOME
 
-ENV HOME /home/kasm-user
-WORKDIR $HOME
-RUN mkdir -p $HOME && chown -R 1000:0 $HOME
+RUN chown 1000:0 $HOME
 
 USER 1000
-
-######### End of Kasmweb ###########
-# Install Everything else
-
 # Install required apt packages.
 RUN sudo apt-get update && \
     sudo apt-get install -y --no-install-recommends \
@@ -81,14 +71,26 @@ COPY resources/install_anaconda.sh /tmp/
 RUN bash /tmp/install_anaconda.sh
 
 # Create Sdfstudio Env and Install Torch+Tinucuda
-COPY resources/create_sdfstudio_and_tinycuda.sh /tmp/
-RUN bash /tmp/create_sdfstudio_and_tinycuda.sh
+# COPY resources/create_sdfstudio_and_tinycuda.sh /tmp/
+# RUN bash /tmp/create_sdfstudio_and_tinycuda.sh
 
 # Install SDFstudio and Nerfstudio
-COPY resources/install_sdfstudio.sh /tmp/
-RUN bash /tmp/install_sdfstudio.sh
+# COPY resources/install_sdfstudio.sh /tmp/
+# RUN bash /tmp/install_sdfstudio.sh
 
 # Install Colmap
-RUN sudo apt-get install -y --no-install-recommends colmap
+# RUN sudo apt-get install -y --no-install-recommends colmap
+
+# USER 1000
+
+######### End Customizations ###########
+
+USER root
+RUN chown 1000:0 $HOME
+RUN $STARTUPDIR/set_user_permission.sh $HOME
+
+ENV HOME /home/kasm-user
+WORKDIR $HOME
+RUN mkdir -p $HOME && chown -R 1000:0 $HOME
 
 USER 1000
