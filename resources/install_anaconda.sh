@@ -4,7 +4,7 @@ ARCH=$(uname -p)
 
 cd /tmp/
 wget https://repo.anaconda.com/archive/Anaconda3-2022.10-Linux-${ARCH}.sh
-sudo bash Anaconda3-20*-Linux-${ARCH}.sh -b -p ~/anaconda3
+bash Anaconda3-20*-Linux-${ARCH}.sh -b -p ~/anaconda3
 rm -r /tmp/Anaconda3-20*-Linux-${ARCH}.sh 
 echo 'source ~/anaconda3/bin/activate' >> ~/.bashrc
 # Update all the conad things
