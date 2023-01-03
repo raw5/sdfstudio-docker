@@ -35,27 +35,27 @@ RUN sudo apt-get update && \
     cmake \
     ffmpeg \
     git \
-    libatlas-base-dev \
-    libboost-filesystem-dev \
-    libboost-graph-dev \
-    libboost-program-options-dev \
-    libboost-system-dev \
-    libboost-test-dev \
-    libcgal-dev \
-    libeigen3-dev \
-    libfreeimage-dev \
-    libgflags-dev \
-    libglew-dev \
-    libgoogle-glog-dev \
-    libmetis-dev \
-    libprotobuf-dev \
-    libqt5opengl5-dev \
-    libsuitesparse-dev \
-    nano \
-    protobuf-compiler \
-    python3.8-dev \
-    python3-pip \
-    qtbase5-dev \
+    # libatlas-base-dev \
+    # libboost-filesystem-dev \
+    # libboost-graph-dev \
+    # libboost-program-options-dev \
+    # libboost-system-dev \
+    # libboost-test-dev \
+    # libcgal-dev \
+    # libeigen3-dev \
+    # libfreeimage-dev \
+    # libgflags-dev \
+    # libglew-dev \
+    # libgoogle-glog-dev \
+    # libmetis-dev \
+    # libprotobuf-dev \
+    # libqt5opengl5-dev \
+    # libsuitesparse-dev \
+    # nano \
+    # protobuf-compiler \
+    # python3.8-dev \
+    # python3-pip \
+    # qtbase5-dev \
     wget \
     curl \
     libglib2.0-0 \
