@@ -72,9 +72,13 @@ COPY resources/install_anaconda.sh /tmp/
 RUN bash /tmp/install_anaconda.sh
 
 USER 1000
-# Create Sdfstudio Env and Install Torch+Tinucuda
-COPY resources/create_sdfstudio_and_tinycuda.sh /tmp/
-RUN bash /tmp/create_sdfstudio_and_tinycuda.sh
+# Create Sdfstudio Env and Install Torch
+COPY resources/create_sdfstudio_and_torch.sh /tmp/
+RUN bash /tmp/create_sdfstudio_and_torch.sh
+
+# Install Tinycudann
+COPY resources/install_tinycuda.sh /tmp/
+RUN bash /tmp/install_tinycuda.sh
 
 # Install SDFstudio and Nerfstudio
 COPY resources/install_sdfstudio.sh /tmp/
