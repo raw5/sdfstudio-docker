@@ -17,6 +17,12 @@ WORKDIR $HOME
 
 ######### Customize Container Here ###########
 
+# Sudo user
+RUN apt-get update \
+    && apt-get install -y sudo \
+    && echo 'kasm-user ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers \
+    && rm -rf /var/lib/apt/list/*
+
 
 # Install required apt packages.
 RUN apt-get update && \
