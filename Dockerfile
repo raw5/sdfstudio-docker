@@ -35,12 +35,12 @@ RUN sudo apt-get update && \
     cmake \
     ffmpeg \
     git \
-    # libatlas-base-dev \
-    # libboost-filesystem-dev \
-    # libboost-graph-dev \
-    # libboost-program-options-dev \
-    # libboost-system-dev \
-    # libboost-test-dev \
+    libatlas-base-dev \
+    libboost-filesystem-dev \
+    libboost-graph-dev \
+    libboost-program-options-dev \
+    libboost-system-dev \
+    libboost-test-dev \
     # libcgal-dev \
     # libeigen3-dev \
     # libfreeimage-dev \
@@ -81,8 +81,8 @@ COPY resources/install_tinycuda.sh /tmp/
 RUN bash /tmp/install_tinycuda.sh
 
 # Install SDFstudio and Nerfstudio
-COPY resources/install_sdfstudio.sh /tmp/
-RUN bash /tmp/install_sdfstudio.sh
+# COPY resources/install_sdfstudio.sh /tmp/
+# RUN bash /tmp/install_sdfstudio.sh
 
 # Install Colmap
 RUN sudo apt-get install -y --no-install-recommends colmap
