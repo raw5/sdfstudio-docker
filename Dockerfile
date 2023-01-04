@@ -89,6 +89,29 @@ RUN sudo apt-get install -y --no-install-recommends colmap
 
 # USER 1000
 
+RUN sudo apt-get update && apt-get install -y --no-install-recommends \
+        libappindicator1 fonts-liberation \
+        libfontconfig1 mesa-common-dev libglu1-mesa-dev \
+        dbus-x11 xfonts-base xfonts-100dpi xfonts-75dpi xfonts-cyrillic xfonts-scalable \
+        python3.8-dev python3-pip \
+        lsb-release xdg-utils \
+        gdal-bin vlc dnsutils iputils-ping \
+        && rm -rf /var/lib/apt/lists/*
+
+USER root
+
+# # # Install nvtop
+COPY resources/install_nvtop.sh /tmp/
+RUN bash /tmp/install_nvtop.sh
+
+# # install VS code
+COPY resources/install_vscode.sh /tmp/
+RUN bash /tmp/install_vscode.sh
+
+# Install Chrome
+COPY resources/install_chrome.sh /tmp/
+RUN bash /tmp/install_chrome.sh
+
 ######### End Customizations ###########
 
 USER root
