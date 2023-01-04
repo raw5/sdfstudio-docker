@@ -112,6 +112,9 @@ RUN bash /tmp/install_vscode.sh
 COPY resources/install_chrome.sh /tmp/
 RUN bash /tmp/install_chrome.sh
 
+COPY resources/install_sdfstudio.sh /tmp/
+COPY resources/install_nerfstudio.sh /tmp/
+
 ######### End Customizations ###########
 
 USER root
