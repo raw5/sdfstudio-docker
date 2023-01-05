@@ -8,3 +8,5 @@ conda activate nerfstudio
 
 # # Install Dependencies
 pip install git+https://github.com/NVlabs/tiny-cuda-nn/#subdirectory=bindings/torch
+
+conda deactivate
