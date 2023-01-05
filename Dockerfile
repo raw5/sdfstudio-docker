@@ -119,7 +119,18 @@ RUN apt-get install -y --no-install-recommends zip
 
 
 COPY resources/install_omnidata_tool.sh /tmp/
-COPY resources/install_omnidata_tool.sh /tmp/
+COPY resources/install_metashape.sh /tmp/
+COPY resources/setup_machine.sh /tmp/
+
+USER 1000
+# Create Sdfstudio Env and Install Torch
+COPY resources/create_nerfstudio.sh /tmp/
+RUN bash /tmp/create_nerfstudio.sh
+
+# Install Tinycudann
+COPY resources/install_nerfstudio_tinycuda.sh /tmp/
+RUN bash /tmp/install_nerfstudio_tinycuda.sh
+
 ######### End Customizations ###########
 
 USER root

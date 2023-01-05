@@ -3,7 +3,8 @@
 echo "------------- Activating Conda ----------------"
 source /opt/anaconda3/bin/activate
 conda activate
-conda activate sdfstudio
+conda activate nerfstudio
+
 
 cd $HOME
 # Installing Nerfsudio
@@ -17,6 +18,8 @@ pip install aiohttp aiortc opencv-python
 pip uninstall -y cryptography
 pip install cryptography==38
 #Download test data
+ns-install-cli
+
 ns-download-data --dataset nerfstudio --capture-name=poster
 
 
