@@ -12,6 +12,10 @@ git clone https://github.com/nerfstudio-project/nerfstudio.git
 cd $HOME/nerfstudio
 pip install --upgrade pip setuptools
 pip install -e .
+pip install pbd
+pip install aiohttp aiortc opencv-python
+pip uninstall -y cryptography
+pip install cryptography==38
 #Download test data
 ns-download-data --dataset nerfstudio --capture-name=poster
 

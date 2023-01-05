@@ -12,6 +12,10 @@ git clone https://github.com/autonomousvision/sdfstudio.git
 cd $HOME/sdfstudio
 pip install --upgrade pip setuptools
 pip install -e .
+pip install pbd
+pip install aiohttp aiortc opencv-python
+pip uninstall -y cryptography
+pip install cryptography==38
 # install tab completion
 ns-install-cli
 # Download test data

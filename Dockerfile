@@ -115,6 +115,11 @@ RUN bash /tmp/install_chrome.sh
 COPY resources/install_sdfstudio.sh /tmp/
 COPY resources/install_nerfstudio.sh /tmp/
 
+RUN apt-get install -y --no-install-recommends zip
+
+
+COPY resources/install_omnidata_tool.sh /tmp/
+COPY resources/install_omnidata_tool.sh /tmp/
 ######### End Customizations ###########
 
 USER root
